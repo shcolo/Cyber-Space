@@ -374,6 +374,7 @@ img {
 }
 .wrapper .safety .box img {
   width: 80px;
+  padding: 5px 0;
 }
 .wrapper .stats {
   margin: 150px 50px;
@@ -439,7 +440,7 @@ img {
   opacity: 0.7;
 }
 .wrapper .history img {
-  width: 300px;
+  width: 150px;
 }
 
 footer {
