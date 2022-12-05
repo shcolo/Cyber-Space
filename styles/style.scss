@@ -1,12 +1,11 @@
-@import url("https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600;700&display=swap");
-@import "fonts";
+@import url("https://api.fontshare.com/v2/css?f[]=cabinet-grotesk@1,800,500,100,700,400,300,200,900&display=swap");
 
 // vars
-$darkBlue: #0b3160;
-$themeColor: #1e89a9;
-$darkestBlue: #040421;
-$greyPurple: #464e68;
-$lightestPurple: #9695ed;
+$darkBlue: #3f600b;
+$themeColor: #69a82f;
+$darkestBlue: #B3FFAE;
+$greyPurple: #B3FFAE;
+$lightestPurple: #F8FFDB;
 $black: #111;
 $white: white;
 
@@ -15,11 +14,13 @@ $white: white;
         @content;
     }
 }
+
 @mixin tablet {
     @media (max-width: 768px) {
         @content;
     }
 }
+
 @mixin laptop {
     @media (max-width: 1220px) {
         @content;
@@ -34,13 +35,14 @@ html {
     padding: 0;
     box-sizing: border-box;
     margin: 0;
-    font-family: "aisv1-Font", monospace;
+    font-weight: 500;
+    font-family: 'Cabinet Grotesk', sans-serif;
 }
 
 body {
     width: 100%;
     height: 100vh;
-    background: linear-gradient(126deg, #344bca 0%, $darkBlue 97%, $darkBlue 100%);
+    background: linear-gradient(126deg, #207a05 0%, $darkBlue 97%, $darkBlue 100%);
     background-size: 500%;
     color: $white;
     animation: gradient 15s ease-in-out infinite;
@@ -50,9 +52,11 @@ body {
     0% {
         background-position: 0% 50%;
     }
+
     50% {
         background-position: 100% 50%;
     }
+
     100% {
         background-position: 0% 50%;
     }
@@ -95,15 +99,18 @@ nav {
     position: fixed;
     display: flex;
     justify-content: center;
+
     @include mobile() {
         justify-content: space-around;
     }
+
     align-items: center;
     gap: 25px;
     width: 100%;
     height: 10vh;
     transition: all 0.3s ease;
     border-radius: 0 0 8px 8px;
+
     .logo {
         display: flex;
         align-items: center;
@@ -113,14 +120,17 @@ nav {
         @include mobile() {
             display: none;
         }
+
         ul {
             display: flex;
             gap: 15px;
+
             li {
                 list-style-type: none;
 
                 a {
                     transition: all 0.5s ease-in-out;
+
                     &:hover {
                         font-weight: bold;
                     }
@@ -131,6 +141,7 @@ nav {
 
     .ham {
         display: none;
+
         @include mobile() {
             display: block;
         }
@@ -143,7 +154,18 @@ nav {
     &.sticky {
         background-color: $darkestBlue;
         box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.5);
-        z-index: 100;
+        z-index: 9999999;
+        color: $black;
+
+        img {
+            filter: invert(1);
+        }
+
+        ul {
+            a {
+                color: $black;
+            }
+        }
     }
 }
 
@@ -154,7 +176,7 @@ nav {
     height: 100vh;
     width: 100%;
     background-color: $themeColor;
-    z-index: 99999;
+    z-index: 99999999;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -195,15 +217,18 @@ nav {
 @media (max-width: 1201px) {
     .wrapper .land {
         padding-top: 100px;
+
         .text {
             width: 100%;
             text-align: center;
         }
+
         flex-direction: column;
 
         .img {
             display: flex;
             justify-content: center;
+
             img {
                 width: 80%;
             }
@@ -232,10 +257,12 @@ nav {
     top: -50%;
     width: 150%;
     pointer-events: none;
-    background-size: 4%;
+    background-size: 2%;
+
     @include mobile() {
         display: none;
     }
+
     opacity: 1;
     z-index: 999;
     animation: grain 1s infinite ease-in-out;
@@ -249,17 +276,15 @@ img {
     from {
         background-position: auto;
     }
+
     to {
         background-position: 600%;
     }
 }
 
-::-webkit-scrollbar {
-    display: none;
-}
-
 .wrapper {
     overflow: hidden;
+
     .land {
         height: 100vh;
         display: flex;
@@ -268,11 +293,14 @@ img {
 
         .text {
             width: 30%;
+
             @include mobile() {
                 width: 100%;
             }
+
             h1 {
                 font-size: 3rem;
+
                 @include mobile {
                     font-size: 2rem;
                 }
@@ -303,20 +331,28 @@ img {
 
     .about {
         margin: 0 100px;
+
         @include mobile() {
-            margin: 0 50px;
+            margin: 0 20px;
         }
+
         font-size: 16px;
+
         p {
             margin-bottom: 20px;
             font-size: 1.3rem;
             opacity: 0.7;
+
+            @include mobile() {
+                margin-bottom: 30px;
+            }
         }
     }
 
     .types {
         display: flex;
-        margin: 0 100px;
+        margin: 0 50px;
+
         @include mobile() {
             flex-direction: column;
             margin: 0 50px;
@@ -326,9 +362,9 @@ img {
             h3 {
                 background-color: $black;
                 width: 40%;
+                padding: 10px 11px;
                 border-radius: 8px;
                 margin-bottom: 20px;
-                padding: 10px 15px;
                 text-align: center;
             }
 
@@ -337,15 +373,18 @@ img {
                 font-size: 1.3rem;
                 opacity: 0.7;
             }
+
             margin-bottom: 30px;
         }
     }
 
     .safety {
         margin: 0 20px;
+
         .row1,
         .row2 {
             display: flex;
+
             @include mobile() {
                 flex-direction: column;
             }
@@ -366,17 +405,21 @@ img {
             display: flex;
             flex-direction: column;
             width: 500px;
+            color: $black;
+
             @include mobile() {
                 width: 100%;
                 height: 100%;
                 padding: 10px 20px;
                 margin-bottom: 20px;
             }
+
             padding: 10px 20px;
             border-radius: 8px;
             height: 250px;
             background: rgba($color: $greyPurple, $alpha: 0.7);
             margin-right: 20px;
+
             img {
                 width: 80px;
             }
@@ -388,6 +431,7 @@ img {
         display: flex;
         align-items: center;
         justify-content: space-around;
+
         @include mobile() {
             flex-direction: column;
         }
@@ -396,6 +440,7 @@ img {
             display: flex;
             align-items: center;
             width: 50%;
+
             img {
                 width: 100%;
             }
@@ -415,15 +460,19 @@ img {
             align-items: center;
             display: flex;
             justify-content: space-between;
+
             @include mobile() {
                 flex-direction: column;
                 margin-bottom: 40px;
             }
+
             .stats {
                 display: flex;
+
                 @include mobile() {
                     flex-direction: column;
                 }
+
                 justify-content: center;
                 align-items: center;
 
@@ -436,10 +485,13 @@ img {
 
     .history {
         display: flex;
+
         @include mobile() {
             flex-direction: column;
         }
+
         align-items: center;
+
         p {
             font-size: 1.3rem;
             opacity: 0.7;
@@ -456,10 +508,13 @@ footer {
     background: $themeColor;
     padding: 20px 0;
     display: flex;
+    color: $black;
+
     @include mobile() {
         gap: 20px;
         flex-direction: column;
     }
+
     align-items: center;
     justify-content: space-around;
 
@@ -467,5 +522,6 @@ footer {
         padding: 10px 20px;
         background: $darkBlue;
         border-radius: 4px;
+        color: $white;
     }
 }

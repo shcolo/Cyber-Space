@@ -1,39 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600;700&display=swap");
-@font-face {
-  font-family: "aisv1-Font";
-  font-style: normal;
-  font-weight: 300;
-  font-display: swap;
-  src: url(font/FiraCode-Regular.ttf);
-}
-@font-face {
-  font-family: "aisv1-Font";
-  font-style: normal;
-  font-weight: 100;
-  font-display: swap;
-  src: url(font/FiraCode-Light.ttf);
-}
-@font-face {
-  font-family: "aisv1-Font";
-  font-style: normal;
-  font-weight: 500;
-  font-display: swap;
-  src: url(font/FiraCode-Medium.ttf);
-}
-@font-face {
-  font-family: "aisv1-Font";
-  font-style: normal;
-  font-weight: 700;
-  font-display: swap;
-  src: url(font/FiraCode-SemiBold.ttf);
-}
-@font-face {
-  font-family: "aisv1-Font";
-  font-style: normal;
-  font-weight: 900;
-  font-display: swap;
-  src: url(font/FiraCode-Bold.ttf);
-}
+@import url("https://api.fontshare.com/v2/css?f[]=cabinet-grotesk@1,800,500,100,700,400,300,200,900&display=swap");
 html {
   scroll-behavior: smooth;
 }
@@ -42,13 +7,14 @@ html {
   padding: 0;
   box-sizing: border-box;
   margin: 0;
-  font-family: "aisv1-Font", monospace;
+  font-weight: 500;
+  font-family: "Cabinet Grotesk", sans-serif;
 }
 
 body {
   width: 100%;
   height: 100vh;
-  background: linear-gradient(126deg, #344bca 0%, #0b3160 97%, #0b3160 100%);
+  background: linear-gradient(126deg, #207a05 0%, #3f600b 97%, #3f600b 100%);
   background-size: 500%;
   color: white;
   -webkit-animation: gradient 15s ease-in-out infinite;
@@ -90,22 +56,22 @@ a {
 }
 
 a.btn {
-  background-color: #1e89a9;
+  background-color: #69a82f;
   padding: 10px 20px;
   border-radius: 4px;
   transition: all 0.3s ease;
 }
 a.btn:hover {
-  background-color: #0b3160;
+  background-color: #3f600b;
 }
 a.btn.empty {
-  border: 4px solid #1e89a9;
+  border: 4px solid #69a82f;
   background-color: transparent;
   padding: 6px 16px;
   transition: all 0.3s ease;
 }
 a.btn.empty:hover {
-  background-color: #1e89a9;
+  background-color: #69a82f;
 }
 
 nav {
@@ -158,9 +124,16 @@ nav .ham img {
   width: 50px;
 }
 nav.sticky {
-  background-color: #040421;
+  background-color: #B3FFAE;
   box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.5);
-  z-index: 100;
+  z-index: 9999999;
+  color: #111;
+}
+nav.sticky img {
+  filter: invert(1);
+}
+nav.sticky ul a {
+  color: #111;
 }
 
 .mobile-screen {
@@ -169,8 +142,8 @@ nav.sticky {
   position: fixed;
   height: 100vh;
   width: 100%;
-  background-color: #1e89a9;
-  z-index: 99999;
+  background-color: #69a82f;
+  z-index: 99999999;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -238,7 +211,7 @@ nav.sticky {
   top: -50%;
   width: 150%;
   pointer-events: none;
-  background-size: 4%;
+  background-size: 2%;
   opacity: 1;
   z-index: 999;
   -webkit-animation: grain 1s infinite ease-in-out;
@@ -271,10 +244,6 @@ img {
     background-position: 600%;
   }
 }
-::-webkit-scrollbar {
-  display: none;
-}
-
 .wrapper {
   overflow: hidden;
 }
@@ -323,7 +292,7 @@ img {
 }
 @media (max-width: 480px) {
   .wrapper .about {
-    margin: 0 50px;
+    margin: 0 20px;
   }
 }
 .wrapper .about p {
@@ -331,9 +300,14 @@ img {
   font-size: 1.3rem;
   opacity: 0.7;
 }
+@media (max-width: 480px) {
+  .wrapper .about p {
+    margin-bottom: 30px;
+  }
+}
 .wrapper .types {
   display: flex;
-  margin: 0 100px;
+  margin: 0 50px;
 }
 @media (max-width: 480px) {
   .wrapper .types {
@@ -347,9 +321,9 @@ img {
 .wrapper .types .type h3 {
   background-color: #111;
   width: 40%;
+  padding: 10px 11px;
   border-radius: 8px;
   margin-bottom: 20px;
-  padding: 10px 15px;
   text-align: center;
 }
 .wrapper .types .type p {
@@ -383,10 +357,11 @@ img {
   display: flex;
   flex-direction: column;
   width: 500px;
+  color: #111;
   padding: 10px 20px;
   border-radius: 8px;
   height: 250px;
-  background: rgba(70, 78, 104, 0.7);
+  background: rgba(179, 255, 174, 0.7);
   margin-right: 20px;
 }
 @media (max-width: 480px) {
@@ -469,9 +444,10 @@ img {
 
 footer {
   margin-top: 50px;
-  background: #1e89a9;
+  background: #69a82f;
   padding: 20px 0;
   display: flex;
+  color: #111;
   align-items: center;
   justify-content: space-around;
 }
@@ -483,6 +459,7 @@ footer {
 }
 footer span {
   padding: 10px 20px;
-  background: #0b3160;
+  background: #3f600b;
   border-radius: 4px;
+  color: white;
 }/*# sourceMappingURL=style.css.map */
